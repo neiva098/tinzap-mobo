@@ -23,6 +23,7 @@ class ChatScreenState extends State<ChatScreen> {
                   foregroundColor: Theme.of(context).primaryColor,
                   backgroundColor: Colors.grey,
                   backgroundImage: new MemoryImage(mockedData[i].sender.mountImage()),
+                  radius: 30,
                 ),
                 title: new Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,7 +45,7 @@ class ChatScreenState extends State<ChatScreen> {
                     style: new TextStyle(color: Colors.grey, fontSize: 15.0),
                   ),
                 ),
-              )
+              ),
             ],
           ),
     );
