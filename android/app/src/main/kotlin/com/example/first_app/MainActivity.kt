@@ -1,4 +1,4 @@
-package com.example.first_app
+package com.example.tinzap
 
 import android.os.Bundle
 
