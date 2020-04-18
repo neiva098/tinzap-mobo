@@ -25,10 +25,10 @@ class LikeDislikeState extends State<LikeDislike> {
     super.initState();
 
     apiGetUsers(id).then((result) {
-      if(this.mounted) {
+      if (this.mounted) {
         setState(() {
-        users = result;
-      });
+          users = result;
+        });
       }
     });
   }

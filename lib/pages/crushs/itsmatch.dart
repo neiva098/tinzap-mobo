@@ -48,10 +48,9 @@ class ItsMatchScreenState extends State<ItsMatchScreen> {
               Text(
                 matchDev['name'],
                 style: new TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic
-                ),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic),
               ),
               SizedBox(height: 20),
               FlatButton(
