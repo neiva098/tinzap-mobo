@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import './chat_screen.dart';
 import 'crushs_screen.dart';
 
-class WhatsAppHome extends StatefulWidget {
+class TinzapHome extends StatefulWidget {
   @override
-  _WhatsAppHomeState createState() => _WhatsAppHomeState();
+  _TinzapHomeState createState() => _TinzapHomeState();
 }
 
-class _WhatsAppHomeState extends State<WhatsAppHome>
+class _TinzapHomeState extends State<TinzapHome>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
   bool showFab = true;
@@ -31,7 +31,7 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("LoveNC"),
+        title: Text("TinZap"),
         elevation: 0.7,
         bottom: TabBar(
           controller: _tabController,
