@@ -8,15 +8,16 @@ class BordedCircleAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
+      alignment: Alignment.center,
         child: new CircleAvatar(
           foregroundColor: Theme.of(context).primaryColor,
           backgroundColor: Colors.grey,
-          backgroundImage: new NetworkImage(image),
+          backgroundImage: image,
           radius: 140,
         ),
-        padding: const EdgeInsets.all(4.0),
+        padding: const EdgeInsets.all(3.0),
         decoration: new BoxDecoration(
-          color: Colors.yellow[200],
+          color: Colors.red,
           shape: BoxShape.circle,
         ));
   }

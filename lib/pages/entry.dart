@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './home.dart';
+import './my_profile_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class EntryScreen extends StatefulWidget {
   @override
@@ -28,18 +29,17 @@ class EntryScreenState extends State<EntryScreen> {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
-                        SizedBox(height: 250),
+                    SizedBox(height: 250),
                     Text(
-                      'Foi enviado em seu número um código de acesso, confirme este código no campo abaixo:',
+                      'Enviamos um código de verificação para você',
                       textAlign: TextAlign.justify,
                       style: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: 16.0,
                         color: Colors.red,
                         fontWeight: FontWeight.bold,
-                        
                       ),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: 40),
                     TextField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -53,12 +53,14 @@ class EntryScreenState extends State<EntryScreen> {
                     ),
                     SizedBox(height: 10),
                     RaisedButton(
-                        onPressed: () {
-                          Navigator.pushAndRemoveUntil(
+                        onPressed: () async {
+                          final prefs = await SharedPreferences.getInstance();
+                          prefs.setString('id', '123');
+
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => TinzapHome()),
-                                (Route<dynamic> route) => false
+                                builder: (context) => ProfileScreen()),
                           );
                         },
                         child: Text('Confirmar'),

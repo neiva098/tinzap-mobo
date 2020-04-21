@@ -5,28 +5,26 @@ var client = http.Client();
 const backEndUri = 'http://192.168.0.16:3333';
 
 apiGetUsers(String id) async {
-  var response = await client.get('$backEndUri/devs', headers: {
+  var response = await client.get('$backEndUri/users/getCrushs', headers: {
     'user': id,
   });
 
   return json.decode(response.body);
 }
 
-apiLogIn(String name) async {
-  return await client.post('$backEndUri/devs', body: {
-    'name': name
+apiLogIn(String phone) async {
+  return await client.post('$backEndUri/users/logIn/$phone');
+}
+
+apiLike(String target, String user) async {
+  return await client.post('$backEndUri/users/likes/$target', headers: {
+    'user': user
   });
 }
 
-apiLike(String id, String matchId) async {
-  return await client.post('$backEndUri/devs/likes/$id', headers: {
-    'user': matchId
-  });
-}
-
-apiDislike(String id, String matchId) async {
-  return await client.post('$backEndUri/devs/dislikes/$id', headers: {
-    'user': matchId
+apiDislike(String target, String user) async {
+  return await client.post('$backEndUri/users/dislikes/$target', headers: {
+    'user': user
   });
 }
 

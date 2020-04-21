@@ -11,7 +11,8 @@ void main() async {
       ]);
 
   final prefs = await SharedPreferences.getInstance();
-  final id = prefs.getString('id') != null ? prefs.getString('id') :  false;
+  prefs.remove('id');
+  final id = prefs.getString('id') != null ? prefs.getString('id') :  null;
 
   runApp(MyApp(id));
 }
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         accentColor: new Color(0xff25D366),
       ),
       debugShowCheckedModeBanner: false,
-      home: id ? TinzapHome() : LogInScreen(),
+      home: id != null ? TinzapHome() : LogInScreen(),
     );
   }
 }

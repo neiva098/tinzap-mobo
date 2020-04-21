@@ -24,6 +24,8 @@ dependencies:
   socket_io_client: ^0.9.9
   touchable_opacity: 1.0.1
   shared_preferences: ^0.4.2
+  image_picker: ^0.6.5+1
+  keyboard_visibility: ^0.5.2
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +40,7 @@ flutter:
     - assets/like.png
     - assets/dislike.png
     - assets/itsamatch.png
+    - assets/noPhoto.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

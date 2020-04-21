@@ -43,7 +43,7 @@ class ItsMatchScreenState extends State<ItsMatchScreen> {
                 'assets/itsamatch.png',
                 height: 150,
               ),
-              BordedCircleAvatar(matchDev['avatar']),
+              BordedCircleAvatar(new NetworkImage(matchDev['avatar'])),
               SizedBox(height: 30),
               Text(
                 matchDev['name'],
